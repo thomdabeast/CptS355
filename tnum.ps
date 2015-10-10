@@ -1,0 +1,12 @@
+; computes sum n + (n-1) + ... + 2 + 1
+/tnum { dictz begin
+	/x exch def 			; x = n
+	1 x eq					; if(x == 1)
+	{ 1 }					; return 1
+	{ x 1 sub tnum x add }	; else x + tnum(x-1)
+	ifelse
+end } def
+/tnumAlg {
+	/x exch def			;x = n
+	x 1 add x mul 2 div	;x*(x+1)/2
+} def
